@@ -1,0 +1,5 @@
+jdbc:
+  DerbyDatabase:
+    url: jdbc:derby:target/derby/DerbyDatabase;create=true
+    driverClassName: org.apache.derby.jdbc.EmbeddedDriver
+    initialSize: 1
