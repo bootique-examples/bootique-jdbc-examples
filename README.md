@@ -57,7 +57,7 @@ Check data via *--select* command:
     
     java -jar target/bootique.jdbc.demo-1.0-SNAPSHOT.jar -c classpath:config.yml -s
 
-Newly created table "TEST" data is successfully created:   
+New table "TEST" data is successfully created:   
     
     ...
        The table TEST is successfully created
