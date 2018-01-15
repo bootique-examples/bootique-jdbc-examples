@@ -51,11 +51,11 @@ Provide required configuration via *config.yml*:
 
 Run custom command *--insert* to create a table:
 
-    java -jar target/bootique.jdbc.demo-1.0-SNAPSHOT.jar -c classpath:config.yml -i
+    java -jar target/bootique.jdbc.demo-1.0-SNAPSHOT.jar -c config.yml -i
     
 Check data via *--select* command:
     
-    java -jar target/bootique.jdbc.demo-1.0-SNAPSHOT.jar -c classpath:config.yml -s
+    java -jar target/bootique.jdbc.demo-1.0-SNAPSHOT.jar -c config.yml -s
 
 New table "TEST" data is successfully created:   
     
