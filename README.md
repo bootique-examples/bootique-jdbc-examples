@@ -48,9 +48,8 @@ Provide required configuration via *config.yml*:
 ```yaml  
 jdbc:
   DerbyDatabase:
-    url: jdbc:derby:target/derby/DerbyDatabase;create=true
-    driverClassName: org.apache.derby.jdbc.EmbeddedDriver
-    initialSize: 1
+    jdbcUrl: jdbc:derby:target/derby/DerbyDatabase;create=true
+    username: sa
 ```
 
 Run custom command *--insert* to create a table:
