@@ -14,6 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class SelectCommand extends CommandWithMetadata {
+
     private Provider<DataSourceFactory> dataSource;
 
     @Inject
@@ -24,16 +25,16 @@ public class SelectCommand extends CommandWithMetadata {
 
     @Override
     public CommandOutcome run(Cli cli) {
-        try (Connection connection = dataSource.get().forName("DerbyDatabase").getConnection()) {
-
+        try (Connection connection
+                     = dataSource.get().forName("DerbyDatabase").getConnection()) {
             DatabaseMetaData metaData = connection.getMetaData();
 
-            try (ResultSet rs = metaData.getTables(null, null, "TEST", null)) {
+            try (ResultSet rs
+                         = metaData.getTables(null, null, "TEST", null)) {
                 while (rs.next()) {
                     System.out.println(String.format("The table %s is successfully created", rs.getString(3)));
                 }
             }
-
         } catch (SQLException e) {
             return CommandOutcome.failed(1, e);
         }
