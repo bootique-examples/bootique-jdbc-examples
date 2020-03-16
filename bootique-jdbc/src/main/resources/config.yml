@@ -1,0 +1,3 @@
+jdbc:
+  DerbyDatabase:
+    jdbcUrl: jdbc:derby:target/derby/DerbyDatabase;create=true
