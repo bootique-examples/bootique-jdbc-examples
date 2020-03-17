@@ -5,6 +5,7 @@
 .DS_Store
 .metadata
 .recommenders
+*.log
 target
 *.iml
 .idea
