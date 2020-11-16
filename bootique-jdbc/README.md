@@ -25,7 +25,7 @@ mvn package
 
 Now you can check the options available in your app:
 ```bash  
-java -jar bootique-jdbc/target/bootique-jdbc-2.0-SNAPSHOT.jar
+java -jar bootique-jdbc/target/bootique-jdbc-2.0.jar
 ```
 ```  
 OPTIONS
@@ -55,11 +55,11 @@ jdbc:
 
 Run custom command *--insert* to create a table:
 ```bash
-java -jar bootique-jdbc/target/bootique-jdbc-2.0-SNAPSHOT.jar -c classpath:config.yml -i
+java -jar bootique-jdbc/target/bootique-jdbc-2.0.jar -c classpath:config.yml -i
 ```    
 Check data via *--select* command:
 ```bash    
-java -jar bootique-jdbc/target/bootique-jdbc-2.0-SNAPSHOT.jar  -c classpath:config.yml -s
+java -jar bootique-jdbc/target/bootique-jdbc-2.0.jar  -c classpath:config.yml -s
 ```
 
 New table "TEST" data is successfully created:   
