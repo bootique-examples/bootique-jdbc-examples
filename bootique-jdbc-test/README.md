@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/bootique-examples/bootique-jdbc-demo.svg)](https://travis-ci.org/bootique-examples/bootique-jdbc-demo)
+[![verify](https://github.com/bootique-examples/bootique-jdbc-demo/actions/workflows/verify.yml/badge.svg)](https://github.com/bootique-examples/bootique-jdbc-demo/actions/workflows/verify.yml)
 # bootique-jdbc-test-demo
 
 How to work with JDBC data stores integrated for [Bootique](http://bootique.io) app. 
