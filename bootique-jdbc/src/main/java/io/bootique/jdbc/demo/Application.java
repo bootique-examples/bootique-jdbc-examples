@@ -2,10 +2,10 @@ package io.bootique.jdbc.demo;
 
 import io.bootique.BQCoreModule;
 import io.bootique.Bootique;
-import io.bootique.di.BQModule;
-import io.bootique.di.Binder;
+import com.google.inject.Binder;
+import com.google.inject.Module;
 
-public class Application implements BQModule {
+public class Application implements Module {
 
     public static void main(String[] args) {
         Bootique.app(args)
