@@ -49,5 +49,5 @@ java -jar target/jdbc-app-demo-X.XX.jar -c config.yml -i
 Check the data using the `--select` command:
 
 ```bash    
-java -jar target/jdbc-app-demo-X.XX.jar -c classpath:config.yml -s
+java -jar target/jdbc-app-demo-X.XX.jar -c config.yml -s
 ```
