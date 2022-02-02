@@ -2,7 +2,7 @@
 
 # bootique-jdbc-demo
 
-Features two examples of `[bootique-jdbc](https://github.com/bootique/bootique-jdbc)` use:
+Contains two examples of [bootique-jdbc](https://github.com/bootique/bootique-jdbc) module use:
 
 * [bootique-jdbc-demo](https://github.com/bootique-examples/bootique-jdbc-demo/tree/master/bootique-jdbc-demo) - core JDBC API
 * [bootique-jdbc-test-demo](https://github.com/bootique-examples/bootique-jdbc-demo/tree/master/bootique-jdbc-test-demo) - JUnit 5 tests
