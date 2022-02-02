@@ -41,13 +41,12 @@ OPTIONS
 
 ```
 
-Run the `--insert` command to create a table with the provided configuration file:
+Run the `--insert` command to create some test data in the test Derby DB:
 ```bash
 java -jar target/jdbc-app-demo-X.XX.jar -c config.yml -i
 ```
 
-Check the data using the `--select` command:
-
+Check the data in the database using the `--select` command:
 ```bash    
 java -jar target/jdbc-app-demo-X.XX.jar -c config.yml -s
 ```
