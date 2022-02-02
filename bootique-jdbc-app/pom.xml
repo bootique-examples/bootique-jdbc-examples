@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>io.bootique.jdbc.demo</groupId>
-    <artifactId>bootique-jdbc-demo</artifactId>
+    <artifactId>bootique-jdbc-app</artifactId>
     <packaging>jar</packaging>
 
     <properties>
