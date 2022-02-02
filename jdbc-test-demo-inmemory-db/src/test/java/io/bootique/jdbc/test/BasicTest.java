@@ -1,31 +1,38 @@
 package io.bootique.jdbc.test;
 
 import io.bootique.BQRuntime;
-import io.bootique.test.junit.BQTestFactory;
-import org.junit.BeforeClass;
-import org.junit.ClassRule;
-import org.junit.Rule;
+import io.bootique.Bootique;
+import io.bootique.jdbc.junit5.DbTester;
+import io.bootique.jdbc.junit5.Table;
+import io.bootique.jdbc.junit5.derby.DerbyTester;
+import io.bootique.junit5.BQApp;
+import io.bootique.junit5.BQTest;
+import io.bootique.junit5.BQTestScope;
+import io.bootique.junit5.BQTestTool;
 
+@BQTest
 public abstract class BasicTest {
 
-    @ClassRule
-    public static BQTestFactory TEST_FACTORY = new BQTestFactory();
-    static Table T1;
+    // create a test DB
+    @BQTestTool(BQTestScope.GLOBAL)
+    static final DbTester db = DerbyTester.db()
 
-    @Rule
-    public TestDataManager dataManager = new TestDataManager(true, T1);
+            // make sure schema is created
+            .initDB("classpath:test-schema.sql")
 
-    @BeforeClass
-    public static void setupDB() {
-        BQRuntime runtime = TEST_FACTORY
-                .app("--config=classpath:dataSource.yml")
-                .autoLoadModules()
-                .createRuntime();
+            // make sure test data is deleted before each test
+            .deleteBeforeEachTest("t1");
 
-        DatabaseChannel channel = DatabaseChannel.get(runtime);
+    // create a global test app object, but do not run any commands
+    @BQApp(value = BQTestScope.GLOBAL, skipRun = true)
+    static final BQRuntime app = Bootique.app()
+            .autoLoadModules()
 
-        channel.execStatement().exec("CREATE TABLE \"t1\" (\"c1\" INT, \"c2\" VARCHAR(10), \"c3\" VARCHAR(10))");
+            // make sure the test app is connected to our test DB
+            .module(db.moduleWithTestDataSource("db"))
+            .createRuntime();
 
-        T1 = channel.newTable("t1").columnNames("c1", "c2", "c3").initColumnTypesFromDBMetadata().build();
+    protected Table t1() {
+        return db.getTable("t1");
     }
 }

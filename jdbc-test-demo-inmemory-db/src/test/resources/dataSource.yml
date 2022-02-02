@@ -1,3 +1,0 @@
-jdbc:
-  datasource:
-    jdbcUrl: jdbc:derby:target/derby/DerbyDatabase;create=true
