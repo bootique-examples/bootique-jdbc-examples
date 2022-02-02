@@ -26,6 +26,7 @@ public class InsertSelectUpdateTest extends BasicTest {
                 .where("c1", 2)
                 .exec();
 
+        // Note that "matcher" API is preferred for assertions, but sometimes you do need to select the data in a test
         List<Object[]> data = t1().selectColumns("c3").select();
         assertEquals(2, data.size());
 
