@@ -22,5 +22,8 @@ jobs:
           key: maven-${{ runner.os }}-${{ hashFiles('**/pom.xml') }}
           restore-keys: maven-${{ runner.os }}
 
-      - name: Build and test...
-        run: mvn verify
+      - name: App - Build and test...
+        run: cd jdbc-app-demo/ && mvn verify
+
+      - name: Tests - Build and test...
+        run: cd jdbc-test-demo/ && mvn verify
