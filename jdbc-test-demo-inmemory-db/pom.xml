@@ -5,7 +5,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.bootique.jdbc.demo</groupId>
-    <artifactId>jdbc-test-demo</artifactId>
+    <artifactId>jdbc-test-demo-inmemory-db</artifactId>
     <version>2.0.RC1</version>
 
     <properties>
