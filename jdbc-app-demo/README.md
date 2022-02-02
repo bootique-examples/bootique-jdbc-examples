@@ -4,9 +4,8 @@ Provides a runnable app that demonstrates how to work with Bootique JDBC APIs.
 
 ## Prerequisites
       
-* Java 11 or newer.
-* Apache Maven.
-* Docker
+* Java 11 or newer
+* Apache Maven
       
 ## Build the Demo App
       
