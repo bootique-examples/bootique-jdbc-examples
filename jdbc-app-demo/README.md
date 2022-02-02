@@ -1,32 +1,28 @@
-[![verify](https://github.com/bootique-examples/bootique-jdbc-demo/actions/workflows/verify.yml/badge.svg)](https://github.com/bootique-examples/bootique-jdbc-demo/actions/workflows/verify.yml)
-# bootique-jdbc-demo
+# jdbc-app-demo
 
-How to work with JDBC data stores integrated for [Bootique](http://bootique.io) app. 
-   
-*For additional help/questions about this example send a message to
-[Bootique forum](https://groups.google.com/forum/#!forum/bootique-user).*
-   
+Demonstrates how to work with Bootique JDBC APIs.
+
 ## Prerequisites
       
-    * Java 1.8 or newer.
-    * Apache Maven.
-    * Docker
+* Java 11 or newer.
+* Apache Maven.
+* Docker
       
-## Build the Demo
+## Build the Demo App
       
-Here is how to build it:
 ```bash           
 git clone git@github.com:bootique-examples/bootique-jdbc-demo.git
-cd bootique-jdbc-demo
-mvn package
+cd jdbc-app-demo
+mvn clean package
 ```
       
-## Run the Bootique-jdbc Demo
+## Run the Demo App
 
 Now you can check the options available in your app:
 ```bash  
-java -jar bootique-jdbc/target/bootique-jdbc-2.0-SNAPSHOT.jar
+java -jar target/jdbc-app-demo-X.XX.jar
 ```
+
 ```  
 OPTIONS
       -c yaml_location, --config=yaml_location
@@ -46,25 +42,13 @@ OPTIONS
 
 ```
 
-Provide required configuration via *config.yml*:
-```yaml  
-jdbc:
-  DerbyDatabase:
-    jdbcUrl: jdbc:derby:target/derby/DerbyDatabase;create=true
-```
-
-Run custom command *--insert* to create a table:
+Run the `--insert` command to create a table with the provided configuration file:
 ```bash
-java -jar bootique-jdbc/target/bootique-jdbc-2.0-SNAPSHOT.jar -c classpath:config.yml -i
-```    
-Check data via *--select* command:
-```bash    
-java -jar bootique-jdbc/target/bootique-jdbc-2.0-SNAPSHOT.jar  -c classpath:config.yml -s
+java -jar target/jdbc-app-demo-X.XX.jar -c config.yml -i
 ```
 
-New table "TEST" data is successfully created:   
-```    
-...
-   The table TEST is successfully created
-...
+Check the data using the `--select` command:
+
+```bash    
+java -jar target/jdbc-app-demo-X.XX.jar -c classpath:config.yml -s
 ```
