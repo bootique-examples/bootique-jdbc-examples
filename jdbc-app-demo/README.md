@@ -50,3 +50,6 @@ Check the data in the database using the `--select` command:
 ```bash    
 java -jar target/jdbc-app-demo-X.XX.jar -c config.yml -s
 ```
+
+Note that per `config.yml` the test database is located under `target/derby/DerbyDatabase`, so running `mvn clean` will 
+delete it with all the inserted data.
