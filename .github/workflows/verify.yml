@@ -26,4 +26,4 @@ jobs:
         run: cd jdbc-app-demo/ && mvn verify
 
       - name: Tests - Build and test...
-        run: cd jdbc-test-demo/ && mvn verify
+        run: cd jdbc-test-demo-inmemory-db/ && mvn verify
