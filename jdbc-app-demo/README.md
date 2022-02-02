@@ -1,6 +1,6 @@
 # jdbc-app-demo
 
-Demonstrates how to work with Bootique JDBC APIs.
+Provides a runnable app that demonstrates how to work with Bootique JDBC APIs.
 
 ## Prerequisites
       
