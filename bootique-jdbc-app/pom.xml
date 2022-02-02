@@ -13,6 +13,7 @@
     <groupId>io.bootique.jdbc.demo</groupId>
     <artifactId>bootique-jdbc-app</artifactId>
     <packaging>jar</packaging>
+    <version>2.0.RC1</version>
 
     <properties>
         <main.class>io.bootique.jdbc.demo.Application</main.class>

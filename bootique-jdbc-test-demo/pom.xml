@@ -6,6 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.bootique.jdbc.demo</groupId>
     <artifactId>bootique-jdbc-test-demo</artifactId>
+    <version>2.0.RC1</version>
 
     <dependencyManagement>
         <dependencies>
