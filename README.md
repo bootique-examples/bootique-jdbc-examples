@@ -2,18 +2,12 @@
 
 # bootique-jdbc-demo
 
-Contains two examples of [bootique-jdbc](https://github.com/bootique/bootique-jdbc) module use:
+Contains two examples of [bootique-jdbc](https://github.com/bootique/bootique-jdbc) use:
 
-* [bootique-jdbc-demo](https://github.com/bootique-examples/bootique-jdbc-demo/tree/master/bootique-jdbc-demo) - core JDBC API
-* [bootique-jdbc-test-demo](https://github.com/bootique-examples/bootique-jdbc-demo/tree/master/bootique-jdbc-test-demo) - JUnit 5 tests
+* [jdbc-app-demo](https://github.com/bootique-examples/bootique-jdbc-demo/tree/master/jdbc-app-demo) - core JDBC API
+* [jdbc-test-demo](https://github.com/bootique-examples/bootique-jdbc-demo/tree/master/jdbc-test-demo) - JUnit 5 tests
    
-For older versions of the framework check the code on the branches:
+For the examples working with the older versions of Bootique check the code on the branches:
 
 * [1.x](https://github.com/bootique-examples/bootique-jdbc-demo/tree/1.x)
 * [2.x](https://github.com/bootique-examples/bootique-jdbc-demo/tree/2.x)
-
-## Prerequisites
-
-* Java 1.8 or newer.
-* Apache Maven.
-* Docker
