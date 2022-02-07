@@ -11,7 +11,7 @@ Provides a runnable app that demonstrates how to work with Bootique JDBC APIs.
       
 ```bash           
 git clone git@github.com:bootique-examples/bootique-jdbc-demo.git
-cd jdbc-app-demo
+cd bootique-jdbc-demo/jdbc-app-demo
 mvn clean package
 ```
       
