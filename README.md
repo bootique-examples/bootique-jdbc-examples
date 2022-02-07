@@ -6,7 +6,7 @@ Contains two examples of [bootique-jdbc](https://github.com/bootique/bootique-jd
 
 * [jdbc-app-demo](https://github.com/bootique-examples/bootique-jdbc-demo/tree/master/jdbc-app-demo) - core JDBC API
 * [jdbc-test-demo-inmemory-db](https://github.com/bootique-examples/bootique-jdbc-demo/tree/master/jdbc-test-demo-inmemory-db) - JUnit 5 tests using Derby in-memory DB
-* TODO: testcontainers demo
+* [jdbc-test-demo-testcontainer](https://github.com/bootique-examples/bootique-jdbc-demo/tree/master/jdbc-test-demo-testcontainer) - JUnit 5 tests using TestContainers with Docker
 
 For the examples working with the older versions of Bootique check the code on the branches:
 
