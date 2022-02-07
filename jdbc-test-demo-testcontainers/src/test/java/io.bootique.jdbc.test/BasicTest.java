@@ -16,7 +16,7 @@ public abstract class BasicTest {
     // create a test DB
     @BQTestTool(BQTestScope.GLOBAL)
     static final DbTester db = TcDbTester
-            .db("jdbc:tc:postgresql:11:///mydb")
+            .db("jdbc:tc:postgresql:14:///mydb")
 
             // make sure schema is created
             .initDB("classpath:testcontainer-schema.sql")
