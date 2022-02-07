@@ -4,7 +4,7 @@ Provides example JUnit5 tests using Bootique JDBC test API.
 
 ## Prerequisites
       
-* Java 11 or newer
+* Java 17 or newer
 * Apache Maven
       
 ## Run the demo tests
