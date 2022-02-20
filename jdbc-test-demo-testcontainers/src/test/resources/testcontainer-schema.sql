@@ -1,0 +1,1 @@
+CREATE TABLE "t1" ("c1" INT, "c2" VARCHAR(10), "c3" VARCHAR(10));
