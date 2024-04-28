@@ -14,7 +14,9 @@
         <maven.compiler.release>11</maven.compiler.release>
 
         <bootique.version>3.0-M4</bootique.version>
-        <postgres.driver.version>42.7.2</postgres.driver.version>
+        <postgres.driver.version>42.7.3</postgres.driver.version>
+        <testcontainers.version>1.19.7</testcontainers.version>
+
         <main.class>io.bootique.jdbc.demo.App</main.class>
     </properties>
 
@@ -26,6 +28,16 @@
                 <version>${bootique.version}</version>
                 <scope>import</scope>
                 <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgres.driver.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${testcontainers.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -42,7 +54,18 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>${postgres.driver.version}</version>
+        </dependency>
+
+        <!-- Test dependencies -->
+        <dependency>
+            <groupId>io.bootique.jdbc</groupId>
+            <artifactId>bootique-jdbc-junit5-testcontainers</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
