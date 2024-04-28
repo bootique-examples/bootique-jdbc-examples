@@ -1,20 +1,20 @@
-[![verify](https://github.com/bootique-examples/bootique-jdbc-demo/actions/workflows/verify.yml/badge.svg)](https://github.com/bootique-examples/bootique-jdbc-demo/actions/workflows/verify.yml)
+[![verify](https://github.com/bootique-examples/bootique-jdbc-examples/actions/workflows/verify.yml/badge.svg)](https://github.com/bootique-examples/bootique-jdbc-examples/actions/workflows/verify.yml)
 
 
-# Bootique 3.x REST Demo
+# Bootique 3.x JDBC Examples
 
 This is an example [Bootique](http://bootique.io) JDBC app. It shows how to define and use a named DataSource,
 and how to write DB-aware unit tests with Bootique and Testcontainers.
 
-Different Git branches contain demo code for different versions of Bootique:
+Different Git branches contain example code for different versions of Bootique:
 
-* [3.x](https://github.com/bootique-examples/bootique-jdbc-demo/tree/3.x)
-* [2.x](https://github.com/bootique-examples/bootique-jdbc-demo/tree/2.x)
-* [1.x](https://github.com/bootique-examples/bootique-jdbc-demo/tree/1.x)
+* [3.x](https://github.com/bootique-examples/bootique-jdbc-examples/tree/3.x)
+* [2.x](https://github.com/bootique-examples/bootique-jdbc-examples/tree/2.x)
+* [1.x](https://github.com/bootique-examples/bootique-jdbc-examples/tree/1.x)
 
 ## Prerequisites
 
-To build and run the demo, ensure you have the following installed on your machine:
+To build and run the project, ensure you have the following installed on your machine:
 
 * Docker
 * Java 11 or newer 
@@ -24,8 +24,8 @@ and then follow these steps:
 
 ## Checkout
 ```
-git clone git@github.com:bootique-examples/bootique-jdbc-demo.git
-cd bootique-jdbc-demo
+git clone git@github.com:bootique-examples/bootique-jdbc-examples.git
+cd bootique-jdbc-examples
 ```
 
 ## Start Postgres DB Locally
@@ -44,19 +44,19 @@ Run the following command to build the code, run the tests and package the app:
 mvn clean package
 ```
 This project uses a [runnable jar with lib folder](https://bootique.io/docs/3.x/bootique-docs/#runnable-jar-with-lib)
-packaging recipe, so now the app is packaged for distribution as `target/bootique-jdbc-demo-3.0.tar.gz` archive. But
+packaging recipe, so now the app is packaged for distribution as `target/bootique-jdbc-examples-3.0.tar.gz` archive. But
 there is also the "unpacked" version in the `target` folder that can be used to run the app.
 
 ## Run
 
 The following command prints a help message with supported options:
 ```bash  
-java -jar target/bootique-jdbc-demo-3.0.jar
+java -jar target/bootique-jdbc-examples-3.0.jar
 ```
 
 ```  
 NAME
-      bootique-jdbc-demo-3.0.jar
+      bootique-jdbc-examples-3.0.jar
 
 OPTIONS
       -c yaml_location, --config=yaml_location
@@ -78,11 +78,11 @@ OPTIONS
 Run the `-i` (or `--insert`) command to create some sample data in the DB. DB location and login credential are 
 specified in the provided `config.yml`.
 ```bash
-java -jar target/bootique-jdbc-demo-3.0.jar -c config.yml -i
+java -jar target/bootique-jdbc-examples-3.0.jar -c config.yml -i
 ```
 
 Run the `-s` (or `--select`) command to display the data inserted in the previous step:
 
 ```bash    
-java -jar target/bootique-jdbc-demo-3.0.jar -c config.yml -s
+java -jar target/bootique-jdbc-examples-3.0.jar -c config.yml -s
 ```
