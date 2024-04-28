@@ -1,6 +1,5 @@
 [![verify](https://github.com/bootique-examples/bootique-jdbc-examples/actions/workflows/verify.yml/badge.svg)](https://github.com/bootique-examples/bootique-jdbc-examples/actions/workflows/verify.yml)
 
-
 # Bootique 3.x JDBC Examples
 
 This is an example [Bootique](http://bootique.io) JDBC app. It shows how to define and use a named DataSource,

@@ -1,4 +1,4 @@
-package io.bootique.jdbc.demo;
+package io.bootique.examples.jdbc;
 
 import io.bootique.BQRuntime;
 import io.bootique.Bootique;

@@ -17,7 +17,7 @@
         <postgres.driver.version>42.7.3</postgres.driver.version>
         <testcontainers.version>1.19.7</testcontainers.version>
 
-        <main.class>io.bootique.jdbc.demo.App</main.class>
+        <main.class>io.bootique.examples.jdbc.App</main.class>
     </properties>
 
     <dependencyManagement>

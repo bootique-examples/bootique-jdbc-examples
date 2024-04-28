@@ -1,15 +1,12 @@
-package io.bootique.jdbc.demo;
+package io.bootique.examples.jdbc;
 
 import io.bootique.cli.Cli;
 import io.bootique.command.CommandOutcome;
 import io.bootique.command.CommandWithMetadata;
-import io.bootique.jdbc.DataSourceFactory;
 import io.bootique.meta.application.CommandMetadata;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.inject.Inject;
-import javax.inject.Provider;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
