@@ -75,16 +75,14 @@ OPTIONS
            Selects data from a DB
 ```
 
-Run the `--insert` command to create some test data in the DB. DB location and login credential are specified in the
-provided `config.yml`.
+Run the `-i` (or `--insert`) command to create some sample data in the DB. DB location and login credential are 
+specified in the provided `config.yml`.
 ```bash
 java -jar target/bootique-jdbc-demo-3.0.jar -c config.yml -i
 ```
 
-Check the data in the database using the `--select` command:
-```bash    
-java -jar target/jdbc-app-demo-X.XX.jar -c config.yml -s
-```
+Run the `-s` (or `--select`) command to display the data inserted in the previous step:
 
-Note that per `config.yml` the test database is located under `target/derby/DerbyDatabase`, so running `mvn clean` will 
-delete it with all the inserted data.
+```bash    
+java -jar target/bootique-jdbc-demo-3.0.jar -c config.yml -s
+```
