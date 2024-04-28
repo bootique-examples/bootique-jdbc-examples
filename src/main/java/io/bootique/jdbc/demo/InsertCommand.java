@@ -14,18 +14,18 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.function.Supplier;
 
 public class InsertCommand extends CommandWithMetadata {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(InsertCommand.class);
 
-    private Provider<DataSourceFactory> dataSourceProvider;
+    private final Supplier<DataSource> dataSourceProvider;
 
-    @Inject
-    public InsertCommand(Provider<DataSourceFactory> dataSourceProvider) {
+    public InsertCommand(Supplier<DataSource> dataSourceProvider) {
 
         super(CommandMetadata.builder(InsertCommand.class)
-                .description("Creates a table in the test Derby DB and inserts sample data")
+                .description("Inserts sample data to a DB")
                 .build());
 
         this.dataSourceProvider = dataSourceProvider;
@@ -34,29 +34,27 @@ public class InsertCommand extends CommandWithMetadata {
     @Override
     public CommandOutcome run(Cli cli) {
 
-        DataSource dataSource = dataSourceProvider.get().forName("DerbyDatabase");
+        DataSource dataSource = dataSourceProvider.get();
 
-        try {
-            SchemaHelper.createSchemaIfMissing(dataSource);
-        } catch (SQLException e) {
-            return CommandOutcome.failed(1, "Failed to create test schema", e);
-        }
-
-        LOGGER.info("Inserting test data...");
+        LOGGER.info("Inserting generated data...");
 
         try (Connection connection = dataSource.getConnection()) {
 
             connection.setAutoCommit(false);
 
-            try (PreparedStatement statement = connection.prepareStatement("INSERT INTO TEST (NAME) VALUES (?)")) {
-                statement.setString(1, "Name_" + System.currentTimeMillis());
-                statement.executeUpdate();
+            try (PreparedStatement st = connection.prepareStatement("INSERT INTO test (name) VALUES (?)")) {
+                for (int i = 0; i < 10; i++) {
+                    st.setString(1, "user_" + i);
+                    st.addBatch();
+                }
+
+                st.executeBatch();
             }
 
             connection.commit();
 
         } catch (SQLException e) {
-            return CommandOutcome.failed(1, "Failed to create test data", e);
+            return CommandOutcome.failed(1, "Failed to insert data", e);
         }
 
         return CommandOutcome.succeeded();

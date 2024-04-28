@@ -15,17 +15,17 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.function.Supplier;
 
 public class SelectCommand extends CommandWithMetadata {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SelectCommand.class);
 
-    private Provider<DataSourceFactory> dataSourceProvider;
+    private final Supplier<DataSource> dataSourceProvider;
 
-    @Inject
-    public SelectCommand(Provider<DataSourceFactory> dataSourceProvider) {
+    public SelectCommand(Supplier<DataSource> dataSourceProvider) {
         super(CommandMetadata.builder(SelectCommand.class)
-                .description("Selects tests data from the test Derby DB")
+                .description("Selects data from a DB")
                 .build());
 
         this.dataSourceProvider = dataSourceProvider;
@@ -34,22 +34,16 @@ public class SelectCommand extends CommandWithMetadata {
     @Override
     public CommandOutcome run(Cli cli) {
 
-        DataSource dataSource = dataSourceProvider.get().forName("DerbyDatabase");
+        DataSource dataSource = dataSourceProvider.get();
 
-        try {
-            SchemaHelper.createSchemaIfMissing(dataSource);
-        } catch (SQLException e) {
-            return CommandOutcome.failed(1, "Failed to create test schema", e);
-        }
-
-        LOGGER.info("Selecting test data...");
+        LOGGER.info("Selecting data...");
 
         try (Connection connection = dataSource.getConnection()) {
 
             try (Statement statement = connection.createStatement()) {
-                try (ResultSet rs = statement.executeQuery("SELECT ID, NAME FROM TEST")) {
+                try (ResultSet rs = statement.executeQuery("SELECT id, name FROM test")) {
                     while (rs.next()) {
-                        System.out.printf("Row: %s, %s\n", rs.getInt(1), rs.getString(2));
+                        System.out.printf("%s, %s\n", rs.getInt(1), rs.getString(2));
                     }
                 }
             }

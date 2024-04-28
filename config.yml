@@ -1,0 +1,5 @@
+jdbc:
+  postgres:
+    jdbcUrl: jdbc:postgresql://localhost:15432/postgres
+    username: postgres
+    password: test
