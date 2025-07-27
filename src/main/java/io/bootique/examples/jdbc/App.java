@@ -6,9 +6,9 @@ import io.bootique.Bootique;
 import io.bootique.di.Binder;
 import io.bootique.di.Provides;
 import io.bootique.jdbc.DataSourceFactory;
+import jakarta.inject.Provider;
+import jakarta.inject.Singleton;
 
-import javax.inject.Provider;
-import javax.inject.Singleton;
 
 public class App implements BQModule {
 
