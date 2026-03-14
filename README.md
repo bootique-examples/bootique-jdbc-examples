@@ -1,12 +1,13 @@
 [![verify](https://github.com/bootique-examples/bootique-jdbc-examples/actions/workflows/verify.yml/badge.svg)](https://github.com/bootique-examples/bootique-jdbc-examples/actions/workflows/verify.yml)
 
-# Bootique 3.x JDBC Examples
+# Bootique 4.x JDBC Examples
 
 This is an example [Bootique](http://bootique.io) JDBC app. It shows how to define and use a named DataSource,
 and how to write DB-aware unit tests with Bootique and Testcontainers.
 
 Different Git branches contain example code for different versions of Bootique:
 
+* [4.x](https://github.com/bootique-examples/bootique-jdbc-examples/tree/4.x)
 * [3.x](https://github.com/bootique-examples/bootique-jdbc-examples/tree/3.x)
 * [2.x](https://github.com/bootique-examples/bootique-jdbc-examples/tree/2.x)
 * [1.x](https://github.com/bootique-examples/bootique-jdbc-examples/tree/1.x)
@@ -16,7 +17,7 @@ Different Git branches contain example code for different versions of Bootique:
 To build and run the project, ensure you have the following installed on your machine:
 
 * Docker
-* Java 11 or newer 
+* Java 21 or newer
 * Maven
 
 and then follow these steps:
@@ -47,12 +48,12 @@ mvn clean package
 
 The following command prints a help message with supported options:
 ```bash  
-java -jar target/bootique-jdbc-examples-3.0.jar
+java -jar target/bootique-jdbc-examples-4.0.jar
 ```
 
 ```  
 NAME
-      bootique-jdbc-examples-3.0.jar
+      bootique-jdbc-examples-4.0.jar
 
 OPTIONS
       -c yaml_location, --config=yaml_location
@@ -74,11 +75,11 @@ OPTIONS
 Run the `-i` (or `--insert`) command to create some sample data in the DB. DB location and login credential are 
 specified in the provided `config.yml`.
 ```bash
-java -jar target/bootique-jdbc-examples-3.0.jar -c config.yml -i
+java -jar target/bootique-jdbc-examples-4.0.jar -c config.yml -i
 ```
 
 Run the `-s` (or `--select`) command to display the data inserted in the previous step:
 
 ```bash    
-java -jar target/bootique-jdbc-examples-3.0.jar -c config.yml -s
+java -jar target/bootique-jdbc-examples-4.0.jar -c config.yml -s
 ```
